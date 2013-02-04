@@ -1,15 +1,30 @@
+# sbt
+/target
+/project/target
+/project/project
+
+# eclipse
+/.project
+/.classpath
+/.cache
+
+# idea
+/.idea
+/.idea_modules
+/*.iml
+
+# ?
+/.settings
+
+# log files created when jvm crashes
+/hs_err_pid*.log
+
+# Play framework
 logs
-project/project
-project/target
-target
 tmp
 .history
 dist
-/.idea
-/*.iml
 /out
-/.idea_modules
-/.classpath
-/.project
 /RUNNING_PID
-/.settings
+/.target
+/bin
