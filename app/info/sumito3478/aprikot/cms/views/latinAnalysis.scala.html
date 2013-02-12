@@ -1,0 +1,8 @@
+@(form: play.api.data.Form[String])
+
+@main("Latin Text Analysis") {
+  @helper.form(action = info.sumito3478.aprikot.cms.controllers.routes.Application.analyzeLatin) {
+    @helper.textarea(form("latin"))
+    <input type="submit"/>
+  }
+}

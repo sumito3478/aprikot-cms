@@ -16,10 +16,50 @@
 package info.sumito3478.aprikot.cms.service
 
 import play.api.{ Logger, Application }
-import securesocial.core.{UserServicePlugin, UserId, SocialUser}
+import securesocial.core.{ UserServicePlugin, UserId, SocialUser }
 import scala.collection.mutable.HashMap
+import securesocial.core.providers.Token
 
 class SecureSocialUserService(
   application: Application) extends UserServicePlugin(application) {
   private val users = HashMap[String, SocialUser]()
+  private val tokens = HashMap[String, Token]()
+
+  def find(id: UserId) = {
+    if (Logger.isDebugEnabled) {
+      Logger.debug("users = %s".format(users))
+    }
+    users.get(id.id + id.providerId)
+  }
+
+  def findByEmailAndProvider(email: String, providerId: String): Option[SocialUser] = {
+    if (Logger.isDebugEnabled) {
+      Logger.debug("users = %s".format(users))
+    }
+    users.values.find(u => u.email.map(e => e == email && u.id.providerId == providerId).getOrElse(false))
+  }
+
+  def save(user: SocialUser) {
+    users += (user.id.id + user.id.providerId -> user)
+  }
+
+  def save(token: Token) {
+    tokens += (token.uuid -> token)
+  }
+
+  def findToken(token: String): Option[Token] = {
+    tokens.get(token)
+  }
+
+  def deleteToken(uuid: String) {
+    tokens -= uuid
+  }
+
+  def deleteTokens() {
+    tokens.clear
+  }
+
+  def deleteExpiredTokens() {
+    tokens.filter(!_._2.isExpired)
+  }
 }
