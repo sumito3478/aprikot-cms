@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #002b36;
+  background-color: #eee8d5;
+  font-size: 36px;
+}
+#content {
+  margin: 0px auto;
+  padding: 0px;
+  width: 1440px;
+  color: #eee8d5;
+  background-color: #002b36;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: 'Source Sans Pro';
+}
+h1 {
+  font-size: 64px;
+  line-height: 72px;
+}
+h2 {
+  font-size: 56px;
+  line-height: 64px;
+  border-bottom: 1px solid;
+}
+h3 {
+  font-size: 48px;
+  line-height: 56px;
+}
+h4 {
+  font-size: 40px;
+  line-height: 48px;
+}
+h5 {
+  font-size: 32px;
+  line-height: 40px;
+}
+h6 {
+  font-size: 24px;
+  line-height: 32px;
+}
+textarea {
+  width: 90%;
+  height: 7em;
+  color: #002b36;
+  background-color: #eee8d5;
+  font-family: 'EB Garamond';
+  font-size: 36px;
+}
+.latin-inflection-analyses {
+  font-size: 36px;
+  list-style: none;
+  font-weight: bold;
+  line-height: 1.5em;
+  font-family: 'EB Garamond';
+  border-bottom: 1px solid;
+}
+orth {
+  font-weight: bold;
+  font-family: 'EB Garamond';
+}
+quote {
+  font-family: 'EB Garamond';
+  font-style: italic;
+}
