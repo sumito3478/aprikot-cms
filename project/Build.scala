@@ -11,7 +11,7 @@ object ApplicationBuild extends Build {
 
   val appDependencies = Seq(
     "info.sumito3478" %% "aprikot" % "0.3.+",
-    "com.micronautics" % "securesocial" % "2.1-RC4a" withSources (),
+    "com.micronautics" % "securesocial" % "2.1.0" withSources (),
     jdbc,
     anorm)
 
