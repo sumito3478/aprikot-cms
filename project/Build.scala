@@ -10,13 +10,24 @@ object Build extends Build {
     jdbc,
     anorm) ++ Dependencies.libraryDependencies
 
-  val main = play.Project(
-    appName,
-    appVersion,
-    appDependencies).settings(StandardProject.newSettings: _*).settings(
-      resolvers += Resolver.url(
-        "play-plugin-releases",
-        new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases"))(
-          Resolver.ivyStylePatterns))
+  import scalariform.formatter.preferences._
+  import com.typesafe.sbt.SbtScalariform
+  lazy val scalariformSettings = SbtScalariform.scalariformSettings ++ Seq(
+    SbtScalariform.ScalariformKeys.preferences := FormattingPreferences()
+      .setPreference(DoubleIndentClassDeclaration, true))
 
+  val playSettings = Seq(
+    resolvers += Resolver.url(
+      "play-plugin-releases",
+      new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases"))(
+        Resolver.ivyStylePatterns))
+
+  val aprikotSettings = playSettings ++ scalariformSettings ++ Seq(
+    scalacOptions ++= Seq(
+      "-target:jvm-1.7",
+      "-deprecation",
+      "-feature",
+      "-unchecked"))
+
+  val main = play.Project(appName, appVersion, appDependencies).settings(aprikotSettings: _*)
 }
