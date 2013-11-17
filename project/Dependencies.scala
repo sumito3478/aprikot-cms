@@ -42,14 +42,11 @@ object Dependencies {
 
   val argonaut = "io.argonaut" %% "argonaut" % "6.0.1"
 
-  val Seq(play_json) = Seq("json").map(a => "com.typesafe.play" %% s"play-$a" % "2.2.1")
-
-  def settings = Seq(
-    resolvers ++= Seq(
+  val resolvers = Seq(
       typesafe_releases,
-      apache_snapshots),
-    libraryDependencies ++= Seq(
-      play_json,
+      apache_snapshots)
+
+  val libraryDependencies =  Seq(
       async_http_client,
       json4s,
       dispatch_core,
