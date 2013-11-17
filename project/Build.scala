@@ -3,7 +3,6 @@ import Keys._
 import play.Project._
 
 object Build extends Build {
-
   val appName = "aprikot-cms"
   val appVersion = "0.1.0-SNAPSHOT"
 
