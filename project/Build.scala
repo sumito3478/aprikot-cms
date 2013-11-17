@@ -2,18 +2,14 @@ import sbt._
 import Keys._
 import play.Project._
 
-import info.sumito3478.aprikot.sbt._
-
-object ApplicationBuild extends Build {
+object Build extends Build {
 
   val appName = "aprikot-cms"
-  val appVersion = "0.0.1-SNAPSHOT"
+  val appVersion = "0.1.0-SNAPSHOT"
 
   val appDependencies = Seq(
-    "info.sumito3478" %% "aprikot" % "0.3.+",
-    "com.micronautics" % "securesocial" % "2.1.0" withSources (),
     jdbc,
-    anorm)
+    anorm) ++ Dependencies.libraryDependencies
 
   val main = play.Project(
     appName,
