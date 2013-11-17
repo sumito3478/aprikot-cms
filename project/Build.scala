@@ -23,6 +23,7 @@ object Build extends Build {
         Resolver.ivyStylePatterns))
 
   val aprikotSettings = playSettings ++ scalariformSettings ++ Seq(
+    resolvers ++= Dependencies.resolvers,
     scalacOptions ++= Seq(
       "-target:jvm-1.7",
       "-deprecation",
