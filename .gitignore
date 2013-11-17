@@ -1,7 +1,8 @@
 # sbt
 /target
 /project/target
-/project/project
+/project/project/target
+/*/target
 
 # eclipse
 /.project
