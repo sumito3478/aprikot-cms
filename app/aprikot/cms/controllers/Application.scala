@@ -13,10 +13,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package info.sumito3478.aprikot.cms.controllers
+package aprikot
+package cms
+package controllers
 
 import play.api.mvc._
-import info.sumito3478.aprikot.cms._
 
 object Application extends Controller {
   def index = Action {
