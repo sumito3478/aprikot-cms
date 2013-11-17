@@ -66,6 +66,5 @@ object Dependencies {
       postgresql,
       commons_io,
       shapeless,
-      h2))
-
+      h2)
 }
