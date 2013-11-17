@@ -1,6 +1,6 @@
 # COPYING
 
-This software is licensed under the Affero GPL v3 license.
+This software is licensed under the Affero GPL v3 license, or (at your option) any later version.
 
 ## Affero GPL v3 license
 
