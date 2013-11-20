@@ -2,6 +2,8 @@ import sbt._
 import Keys._
 import play.Project._
 
+// This code originated from http://play.lighthouseapp.com/projects/82401-play-20/tickets/841-gzip-assets
+// Thanks a lot!
 object GZip {
   val gzippableAssets = SettingKey[PathFinder]("gzippable-assets")
 
