@@ -22,13 +22,15 @@ object Build extends Build {
       new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases"))(
         Resolver.ivyStylePatterns))
 
-  val aprikotSettings = playSettings ++ scalariformSettings ++ Seq(
-    resolvers ++= Dependencies.resolvers,
-    scalacOptions ++= Seq(
-      "-target:jvm-1.7",
-      "-deprecation",
-      "-feature",
-      "-unchecked"))
+  val aprikotSettings = playSettings ++
+    scalariformSettings ++
+    GZip.settings ++
+    Seq(resolvers ++= Dependencies.resolvers,
+      scalacOptions ++= Seq(
+        "-target:jvm-1.7",
+        "-deprecation",
+        "-feature",
+        "-unchecked"))
 
   val main = play.Project(appName, appVersion, appDependencies).settings(aprikotSettings: _*)
 }
